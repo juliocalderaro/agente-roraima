@@ -1,0 +1,66 @@
+# 🤖 Agente Roraima — Asistente IA para Atención al Cliente
+
+## Asistente conversacional con IA Generativa para
+## automatización de consultas en negocio de servicios
+## y remesas latinoamericanas
+
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
+[![LangChain](https://img.shields.io/badge/LangChain-Framework-green.svg)](https://langchain.com)
+[![Ollama](https://img.shields.io/badge/Ollama-llama3.2-orange.svg)](https://ollama.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+---
+
+## 📋 Resumen Ejecutivo
+
+**Agente Roraima** es un asistente de IA desarrollado para
+**Multiservicios Roraima** (Mungia, Bizkaia), un negocio de
+venta de productos latinoamericanos y servicios de remesas.
+
+El sistema automatiza la atención al cliente respondiendo
+consultas frecuentes sobre horarios, servicios, cotizaciones
+de divisas y requisitos de envío de dinero.
+
+### 📊 Resultados
+
+| Métrica | Valor |
+|---|---|
+| Interacciones registradas | +5,000 |
+| Consultas mensuales automatizadas | ~450 |
+| Divisas soportadas | 16 monedas latinoamericanas |
+| Canales atendidos | WhatsApp, Web, Terminal |
+| Satisfacción del cliente | ✅ Positiva |
+
+---
+
+## 🎯 El Problema
+
+Multiservicios Roraima recibía diariamente las mismas
+consultas por WhatsApp de forma manual y repetitiva:
+
+- "¿Cuál es el horario?"
+- "¿A cómo está el euro en Colombia?"
+- "¿Qué necesito para enviar dinero?"
+- "¿Hacen delivery?"
+
+**Responder manualmente era tedioso y consumía tiempo
+que el negocio necesitaba para otras tareas.**
+
+---
+
+## 💡 La Solución
+
+Un agente de IA con arquitectura de 3 capas que:
+
+```text
+CAPA 1: Reglas deterministas
+        Para preguntas frecuentes y obvias
+        Respuesta instantánea, 100% fiable
+              ↓
+CAPA 2: LLM (llama3.2 via Ollama)
+        Para preguntas ambiguas o complejas
+        Razonamiento inteligente
+              ↓
+CAPA 3: RAG Fallback
+        Base de conocimiento del negocio
+        Última línea de respuesta
