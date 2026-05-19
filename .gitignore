@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+
+# Entorno y secretos
+.env
+*.log
+credentials.json
+*.key
+
+# Base de datos local
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Backup local (no subir a GitHub)
+backup/
+
+# Logs (mantener carpeta, ignorar contenido)
+logs/*
+!logs/.gitkeep
+
+# Streamlit cache
+.streamlit/
+
+# Archivos temporales
+*.tmp
+*.bak

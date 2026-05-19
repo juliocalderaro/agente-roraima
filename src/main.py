@@ -460,26 +460,36 @@ def horarios() -> str:
 
 def servicios() -> str:
     return (
-        "Servicios de Multiservicios Roraima:\n"
-        "- Envio de dinero: Western Union, RIA\n"
-        "- Recargas moviles: Movistar, Digitel, CANTV\n"
-        "- Impresiones en blanco y negro\n"
-        "- Delivery en Mungia (minimo 15 EUR)\n"
-        "- Tienda online de productos latinoamericanos\n"
-        "- Cotizaciones de divisas latinoamericanas"
+        "Servicios de Multiservicios Roraima:\n\n"
+        "💸 Envío de dinero (Remesas):\n"
+        "   Western Union, RIA, Europhil\n\n"
+        "📱 Recargas móviles (España):\n"
+        "   Digi, Lebara, Orange, Vodafone,\n"
+        "   LlamaYa, MásMóvil\n"
+        "   (También recargas internacionales)\n\n"
+        "🖨️  Impresiones en blanco y negro\n\n"
+        "🚚 Delivery en Mungia (mínimo 15 EUR)\n\n"
+        "🛒 Tienda online de productos\n"
+        "   latinoamericanos\n\n"
+        "💱 Cotizaciones de divisas\n"
+        "   latinoamericanas"
     )
 
 
 def envio_info() -> str:
     return (
-        "Envio de dinero (Remesas):\n\n"
-        "Operadores: Western Union y RIA\n\n"
+        "Envío de dinero (Remesas):\n\n"
+        "Operadores disponibles:\n"
+        "  - Western Union\n"
+        "  - RIA\n"
+        "  - Europhil\n\n"
         "Requisitos:\n"
-        "  - Cedula o pasaporte vigente\n"
+        "  - Cédula o pasaporte vigente\n"
         "  - Nombre completo del destinatario\n"
-        "  - Pais de destino\n"
+        "  - País de destino\n"
         "  - Monto a enviar\n\n"
-        "Comision: 5% del monto enviado"
+        "Visítanos en la tienda para\n"
+        "asesoramiento personalizado."
     )
 
 
@@ -506,9 +516,14 @@ def rag_buscar(pregunta: str) -> str:
 
     # Envios y requisitos
     if any(x in p for x in [
-        'envio', 'enviar', 'remesa', 'western', 'ria',
-        'mandar', 'requisito', 'necesito para',
-        'como mando', 'documentos', 'que necesito'
+        'envio', 'envía', 'envío', 'enviar', 'envias',
+        'remesa', 'remesas', 'western', 'ria', 'europhil',
+        'mandar', 'mandarme', 'transferir', 'transferencia',
+        'requisito', 'requisitos', 'necesito para',
+        'como mando', 'como envio', 'como envío',
+        'como enviar', 'como mandar',
+        'documentos', 'que necesito',
+        'giro', 'girar'
     ]):
         return envio_info()
 
@@ -833,17 +848,24 @@ class BucleAgente:
 
         # ── Envios y requisitos (antes de servicios) ──────────
         if any(x in p for x in [
-            'envio', 'enviar', 'remesa', 'western', 'ria',
-            'mandar dinero', 'mandar plata', 'transferencia',
-            'requisito', 'que necesito para', 'como envio',
-            'como mando', 'documentos para', 'que necesito'
+            'envio', 'envía', 'envío', 'enviar', 'envias',
+            'remesa', 'remesas', 'western', 'ria', 'europhil',
+            'mandar dinero', 'mandar plata', 'mandar euros',
+            'mando dinero', 'mando plata', 'mando euros',
+            'mandé', 'mandar', 'mando',
+            'transferencia', 'transferir',
+            'requisito', 'requisitos',
+            'que necesito para', 'como envio', 'como envío',
+            'como mando', 'como mandar', 'como enviar',
+            'documentos para', 'que necesito',
+            'giro', 'girar dinero', 'plata a', 'dinero a'
         ]):
             return {
                 "tipo": "herramienta",
                 "nombre": "rag_buscar",
                 "parametros": {"pregunta": pregunta}
             }
-
+        
         # ── Delivery especifico ───────────────────────────────
         if any(x in p for x in [
             'domicilio', 'delivery', 'reparto',
